@@ -1,0 +1,15 @@
+src/
+test/
+tests/
+*.ts
+*.map
+.git/
+.gitignore
+.env
+.env.*
+!.env.example
+.DS_Store
+bun.lockb
+bun.lock
+*.log
+README.md
