@@ -23,6 +23,34 @@ const runCLI = () => {
     }
   });
 
+  program.command("codex").action(async () => {
+    try {
+      const files = await readdir(`${homedir()}/.codex/skills`);
+
+      consola.log("claude code skills list");
+
+      for (const file of files) {
+        consola.log(file);
+      }
+    } catch (error) {
+      consola.log("no such file directory");
+    }
+  });
+
+  program.command("global").action(async () => {
+    try {
+      const files = await readdir(`${homedir()}/.agents/skills`);
+
+      consola.log("claude code skills list");
+
+      for (const file of files) {
+        consola.log(file);
+      }
+    } catch (error) {
+      consola.log("no such file directory");
+    }
+  });
+
   program.parse();
 };
 
