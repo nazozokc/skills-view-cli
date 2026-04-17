@@ -9,6 +9,7 @@ async function listskills(dir: string, name: string): Promise<void> {
     const files = await readdir(dir);
 
     consola.log(`${name} skills list`);
+    consola.log(`--------------------------------------`);
 
     for (const file of files) {
       consola.log(file);
