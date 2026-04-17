@@ -2,7 +2,7 @@ import { consola } from "consola";
 import { Command } from "commander";
 import { homedir } from "os";
 import { execa, execaSync } from "execa";
-import { readdir } from "fs";
+import { readdir } from "fs/promises";
 
 const runCLI = () => {
   const program = new Command();
@@ -11,17 +11,19 @@ const runCLI = () => {
 
   program.command("claude").action(async () => {
     try {
-      const files = await readdir(`${homedir}/.claude/skills`);
+      const files = await readdir(`${homedir()}/.claude/skills`);
 
       consola.log("claude code skills list");
+
       for (const file of files) {
         consola.log(file);
       }
-    } catch (error) {}
+    } catch (error) {
+      consola.log("no such file directory");
+    }
   });
 
   program.parse();
 };
 
 runCLI();
-
