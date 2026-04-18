@@ -5,7 +5,7 @@ import { viewskills } from "./viewskills.ts";
 const runCLI = () => {
   const program = new Command();
 
-  program.name("skills").description("skills list CLI").version("0.1.0");
+  program.name("skills").description("skills list CLI").version("0.1.7");
   program.command("claude").action(() => {
     viewskills(`${homedir()}/.claude/skills`, "claude code");
   });
