@@ -12,6 +12,5 @@
   "files": [
     "dist/index.js",
     "README.md"
-  ],
-  ...
+  ]
 }
